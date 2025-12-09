@@ -12,6 +12,13 @@ You are encouraged to improve any provided CSS by using modern units and increas
 - cornflower blue (used for hover states): #4278e5
 
 */
+header, footer, .small-button, .fake-button{
+  background-color: #E5AF42;
+}
+
+.blue-hover:hover, .fake-button:hover {
+    background-color: #4278e5;
+}
 
 /************* site defaults *************/
 body {
@@ -22,6 +29,10 @@ body {
 }
 
 /* TO DO: all elements with the .flex class applied are to be made into flex-box containers. */
+
+.flex {
+  display: flex;
+}
 
 /************* site-wide text styling *************/
 
@@ -39,16 +50,92 @@ body {
         - change the cursor to pointer.
 */
 
+h1 {
+  font-size: clamp(24px, 5vw, 48px);
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(18px, 4vw, 36px);
+  margin-bottom: clamp(8px, 2vw, 12px);
+}
+
+.large-text {
+  font-size: 24px;
+}
+
+.fake-button {
+  background-color: #E5AF42;
+  text-align: center;
+  line-height: 3;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+
+.fake-button:hover, .blue-hover:hover {
+  text-decoration: underline;
+  background-color: #4278e5;
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #4278e5;
+  cursor: pointer;
+}
+
+a.fake-button:hover {
+  text-decoration: none;
+}
+
 /************* header/footer styling *************/
 
 /* TO DO:
     - the header and footer will be the same mustard-yellow as the buttons.
     - the header has a max height of 150px.
-    - implement a responsive navbar in the header. The icon + title should be aligned to the left with responsive spacing
+    
+    - implement a responsive navbar in the header. The icon + title should be aligned to the left with responsive spacing    
     - create a navbar for the other pages that is right aligned. apply flexbox and make sure there is no overlap at a mobile screen width
     - there will be 25px of space between the header and main, and 50px of space between main and footer.
     - the footer should have a max height of about 60px, have a font-weight of 200, and the text within will be centered vertically and horizontally to the browser window.
 */
+
+header {
+  max-height: 150px;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: auto;
+  margin-bottom: 25px;
+}  
+
+header a{
+  align-items: center;
+}
+
+header img{
+  display: block;
+  max-height: clamp(80px, 15vw, 120px);
+}
+
+footer {
+  max-height: 60px;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* set elements in the header to the max height of the header */
+
 
 /************* index page *************/
 
