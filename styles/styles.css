@@ -12,16 +12,20 @@ You are encouraged to improve any provided CSS by using modern units and increas
 - cornflower blue (used for hover states): #4278e5
 
 */
-header, footer, .small-button, .fake-button{
+header, footer, .fake-button{
   background-color: #E5AF42;
 }
 
-.blue-hover:hover, .fake-button:hover {
+.blue-hover:hover, .fake-button:hover{
     background-color: #4278e5;
 }
 
 /************* site defaults *************/
-body {
+body{
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   width: 950px;
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
@@ -30,7 +34,7 @@ body {
 
 /* TO DO: all elements with the .flex class applied are to be made into flex-box containers. */
 
-.flex {
+.flex{
   display: flex;
 }
 
@@ -50,21 +54,26 @@ body {
         - change the cursor to pointer.
 */
 
-h1 {
-  font-size: clamp(24px, 5vw, 48px);
-  text-align: center;
+main{
+  flex-grow: 1;
 }
 
-h2 {
+h1{
+  font-size: clamp(24px, 5vw, 48px);
+  text-align: center;
+  justify-content: center;
+}
+
+h2{
   font-size: clamp(18px, 4vw, 36px);
   margin-bottom: clamp(8px, 2vw, 12px);
 }
 
-.large-text {
-  font-size: 24px;
+.large-text{
+  font-size: clamp(16px, 3vw, 24px);
 }
 
-.fake-button {
+.fake-button{
   background-color: #E5AF42;
   text-align: center;
   line-height: 3;
@@ -73,24 +82,25 @@ h2 {
   color: black;
 }
 
-.fake-button:hover, .blue-hover:hover {
+.fake-button:hover, .blue-hover:hover{
   text-decoration: underline;
   background-color: #4278e5;
   color: white;
   cursor: pointer;
 }
 
-a {
+a{
   color: black;
   text-decoration: underline;
 }
 
-a:hover {
+a:hover{
   color: #4278e5;
   cursor: pointer;
+  text-decoration: underline;
 }
 
-a.fake-button:hover {
+a.fake-button:hover{
   text-decoration: none;
 }
 
@@ -106,18 +116,19 @@ a.fake-button:hover {
     - the footer should have a max height of about 60px, have a font-weight of 200, and the text within will be centered vertically and horizontally to the browser window.
 */
 
-header {
+header{
   max-height: 150px;
-  display: grid;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+  display: flex;
+  padding: 10px 15px;
   width: auto;
   margin-bottom: 25px;
 }  
 
 header a{
   align-items: center;
+  max-height: clamp(80px, 15vw, 120px);
+  gap: clamp(10px, 2vw, 20px);
+  text-decoration: none;
 }
 
 header img{
@@ -125,15 +136,45 @@ header img{
   max-height: clamp(80px, 15vw, 120px);
 }
 
-footer {
+header nav ul{
+  list-style: none;
+  gap: clamp(15px, 3vw, 30px);
+  margin-left: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav{
+  font-size: clamp(16px, 3vw, 24px);
+}
+
+header h1{
+  font-size: clamp(16px, 3vw, 34px);
+}
+
+.header-index{
+  text-decoration: underline;
+}
+
+.header-index:hover{
+  color: black;
+}
+
+.index-title:hover{
+  color: #4278e5;
+  text-decoration: underline;
+}
+
+footer{
   max-height: 60px;
   font-weight: 200;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  flex-direction: column;
 }
-
 /* set elements in the header to the max height of the header */
 
 
@@ -147,6 +188,42 @@ footer {
     - the pair of fake-buttons will be centered on the page. HINT: can calculate the required margin to make them appear to be centered.
 */
 
+.index{
+  display: flex;
+  flex-direction: column;
+}
+
+.index-content{
+  gap: clamp(25px, 5vw, 50px);
+  padding-bottom: clamp(25px, 5vw, 50px);
+  align-items: center;
+  justify-content: center;
+}
+
+.index img{
+  width: clamp(200px, 30vw, 300px);
+  margin-left: auto;
+}
+
+.about-us h2{
+  line-height: clamp(18px, 4vw, 36px);
+}
+
+.index-content p{
+  margin-bottom: clamp(8px, 2vw, 12px);
+}
+
+.index-button{
+  align-items: center;
+  justify-content: space-around;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.index-button .fake-button{
+  width: clamp(150px, 25vw, 250px);
+}
+
 /************* bookings page *************/
 
 /* TO-DO:
@@ -158,8 +235,48 @@ footer {
     - the "clear days" button will responsive around 200px wide.
     - any element tagged with the .clicked class will turn mustard yellow. **This will be very important for your JavaScript.**
     - all items within the page will be centered within their available space.
-
 */
+
+.booking-page{
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 60vw, 600px);
+  margin: 0px auto;
+  text-align: center;
+  font-size: clamp(16px, 3vw, 18px);
+  justify-content: center;
+  align-items: center;
+}
+
+.day-selector{
+  margin-bottom: clamp(8px, 2vw, 12px);
+  gap: clamp(10px, 2vw, 20px);
+}
+
+.day-selector li{
+  width: clamp(40px, 10vw, 60px);
+}
+
+.day-selector li, .small-button{
+  border: 1px solid black;;
+}
+
+.small-button{
+  padding: 5px;
+}
+
+.top-margin{
+  margin-top: clamp(16px, 4vw, 24px);
+  margin-bottom: clamp(8px, 2vw, 12px);
+}
+
+.clear-button-class{
+  width: clamp(150px, 30vw, 200px);
+}
+
+.clicked{
+  background-color: #E5AF42;
+}
 
 /************* contact page *************/
 /* TO DO:
@@ -169,3 +286,42 @@ footer {
     - all form input, textarea, and and button elements will have the same font as the rest of the page, a line-height of 24px, a font-size of 16px, and the same border as other buttons on the site. There will be 24px of space below each of these elements.
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.contact div{
+  gap: clamp(16px, 4vw, 24px);
+}
+
+.contact label{
+  width: clamp(100px, 20vw, 150px);
+  text-align: right;
+}
+
+.contact input, .contact textarea{
+  width: clamp(200px, 40vw, 300px);
+  margin-bottom: clamp(16px, 4vw, 24px);
+}
+
+.contact textarea{
+  height: clamp(100px, 30vh, 150px);
+}
+
+.contact input, .contact textarea, .contact .fake-button{
+  font-family: "Montserrat", sans-serif;
+  line-height: clamp(20px, 4vw, 24px);
+  font-size: clamp(14px, 3vw, 16px);
+  border: 1px solid black;
+}
+
+.contact button{
+  width: calc(clamp(200px, 40vw, 300px) + 6px);
+  margin-left: calc(clamp(100px, 20vw, 150px) + clamp(16px, 4vw, 24px));
+  padding: clamp(10px, 2vw, 15px) 0px clamp(10px, 2vw, 15px) 0px;
+}

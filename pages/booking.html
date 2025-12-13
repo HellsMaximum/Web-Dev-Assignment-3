@@ -19,11 +19,19 @@
 
 <body>
     <header>
-        <a href="../index.html" class="flex">
-            <img src="../images/dog.png" alt="outline of a dog's face with heart above it">
-            <h1>Delilah's Doggy Daycare</h1>
-        </a>
-        <!-- TODO Implement a nav -->
+        <!-- TODO Implement a nav -->        
+        <nav>
+            <ul class="flex">
+                <li>
+                    <a href="../index.html" class="flex header-index">
+                      <img src="../images/dog.png" alt="outline of a dog's face with heart above it" class="index-img">
+                      <h1 class="index-title">Delilah's Doggy Daycare</h1>
+                    </a>
+                </li>
+                <li><a href="booking.html">Booking Rates</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
     <main class="booking-page">
         <h2>Booking Rate Calculator</h2>
@@ -38,7 +46,7 @@
         <p>for <span class="clicked small-button blue-hover" id="full">full</span> or <span
                 class="small-button blue-hover" id="half">half</span> days.</p>
         <p class="top-margin large-text">My weekly cost will be $<span id="calculated-cost">0</span>.</p>
-        <p class="fake-button blue-hover" id="clear-button">clear days</p>
+        <p class="fake-button blue-hover clear-button-class" id="clear-button">clear days</p>
     </main>
     <footer>
         <p>Dog icons created by <a href="https://www.flaticon.com/free-icons/dog" title="dog

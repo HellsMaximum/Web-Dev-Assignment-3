@@ -17,19 +17,22 @@
 
 <body>
     <header>
-        <a href="index.html" class="flex">
-            <img src="images/dog.png" alt="outline of a dog's face with heart above it">
-            <h1>Delilah's Doggy Daycare</h1>
-        </a>
+        <!-- TODO Implement a nav -->        
         <nav>
-            <a href="index.html">Home</a>
-            <a href="pages/booking.html">Booking</a>
-            <a href="pages/contact.html">Contact Us</a>
+            <ul class="flex">
+                <li>
+                    <a href="index.html" class="flex header-index">
+                      <img src="images/dog.png" alt="outline of a dog's face with heart above it" class="index-img">
+                      <h1 class="index-title">Delilah's Doggy Daycare</h1>
+                    </a>
+                </li>
+                <li><a href="pages/booking.html">Booking Rates</a></li>
+                <li><a href="pages/contact.html">Contact Us</a></li>
+            </ul>
         </nav>
-        <!-- TODO Implement a nav -->
     </header>
     <main class="index">
-        <div class="flex">
+        <div class="flex index-content">
             <section class="about-us">
                 <h2>About Us</h2>
                 <p>Is your dog bored in the house?</p>
@@ -44,7 +47,7 @@
             <img src="images/dog-yellow-background.jpg"
                 alt="french bulldog puppy with large ears looking sad on mustard yellow background">
         </div>
-        <div class="flex">
+        <div class="flex index-button">
             <a class="fake-button large-text" href="pages/booking.html">Booking Rates</a>
             <a class="fake-button large-text" href="pages/contact.html">Contact Us</a>
         </div>
